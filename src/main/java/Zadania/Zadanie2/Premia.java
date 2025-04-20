@@ -1,24 +1,23 @@
 package Zadania.Zadanie2;
 public class Premia{
-public static void main (String args[])
-	{
-	 
-	}
-	public int countBonus (int yearfOfWork){
-		int premia = 0;
-		if(yearfOfWork<4){
-			premia = 0;
+	public static void main (String args[]) {
 		}
-		else if (yearfOfWork>=4 && yearfOfWork<8){
-			premia = 50;
-		}else if(yearfOfWork>8 && yearfOfWork <=11){
-			premia = 75;
-		}else if(yearfOfWork>11 && yearfOfWork<=70){
-			premia = 100;
-		}else{
-			premia = 777;
+	
+		public String wysokoscPremii (int staz) {
+		if (staz < 0 || staz > 70) {
+			return "Podaj poprawne dane";
 		}
-
-		return premia;
+		else if (staz < 4) {
+			return "0%";
+		}	
+		else if (staz >= 4 && staz <= 8) {
+			return "50%";
+		}
+		else if (staz > 8 && staz <= 11) {
+			return "75%";
+		}
+		else {
+			return "100%";
+		}
 	}
 }

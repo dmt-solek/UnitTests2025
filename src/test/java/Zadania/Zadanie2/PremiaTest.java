@@ -5,32 +5,35 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class PremiaTest {
+    private Premia pracownik;
     
-    private Premia hhh;
-
     @BeforeEach
-    public  void setUp() {
-        hhh = new Premia();
+    public void setUp() {
+        pracownik = new Premia();
     }
 
     @Test
-    public void testesPremia0() {
-        assertEquals(0, hhh.countBonus(3));
+    public void wysokoscPremii0() {
+        assertEquals("0%",pracownik.wysokoscPremii(3));
     }
+
     @Test
-    public void testesPremia50() {
-        assertEquals(50, hhh.countBonus(4));
+    public void wysokoscPremii50() {
+        assertEquals("50%",pracownik.wysokoscPremii(4));
     }
+
     @Test
-    public void testesPremia75() {
-        assertEquals(75, hhh.countBonus(9));
+    public void wysokoscPremii75() {
+        assertEquals("75%",pracownik.wysokoscPremii(9));
     }
+
     @Test
-    public void testesPremia100() {
-        assertEquals(100, hhh.countBonus(12));
+    public void wysokoscPremii100() {
+        assertEquals("100%",pracownik.wysokoscPremii(12));
     }
+
     @Test
-    public void testesPremia777() {
-        assertEquals(777, hhh.countBonus(99));
+    public void wysokoscPremii000() {
+        assertEquals("Podaj poprawne dane",pracownik.wysokoscPremii(71));
     }
 }
